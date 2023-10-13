@@ -2870,6 +2870,14 @@ span.exturl:hover {
   box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.35);
   background-image: linear-gradient(90deg, #5587ce 0%, #21487a 25%, #3537a5 50%, #21487a 75%, #5587ce 100%);
 }
+.links-of-blogroll-title {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.links-of-blogroll {
+  font-size: 1em;
+  color: #7d9fde;
+}
 .post-body {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 1.2em;
