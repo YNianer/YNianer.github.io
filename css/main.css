@@ -2512,7 +2512,7 @@ header.header {
 .main-inner {
   border-radius: 20px 20px 20px 20px;
   box-sizing: border-box;
-  width: calc(100% - 272px);
+  width: calc(100% - 287px);
 }
 @media (max-width: 991px) {
   .main-inner {
@@ -2521,7 +2521,7 @@ header.header {
   }
 }
 .footer-inner {
-  padding-left: 272px;
+  padding-left: 287px;
 }
 @media (max-width: 991px) {
   .footer-inner {
@@ -2531,7 +2531,7 @@ header.header {
   }
 }
 .column {
-  width: 260px;
+  width: 275px;
 }
 @media (max-width: 991px) {
   .column {
@@ -2803,7 +2803,7 @@ body {
   text-align: center;
 }
 canvas#canvas {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .sidebar {
   opacity: 0.9;
@@ -2818,10 +2818,14 @@ canvas#canvas {
 a,
 span.exturl {
   border-bottom: none;
+  color: #152272;
 }
 a:hover,
 span.exturl:hover {
-  color: #ff106c;
+  color: #fc6423;
+}
+.category-all-page .category-list-child {
+  padding-left: 20px;
 }
 .tag-cloud a {
   box-shadow: 0 1px 3px #24292e, 0 1px 2px #24292e;
@@ -2876,7 +2880,10 @@ span.exturl:hover {
 }
 .links-of-blogroll {
   font-size: 1em;
-  color: #7d9fde;
+  color: #fc6423;
+}
+.links-of-author-item {
+  width: 33%;
 }
 .post-body {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
@@ -2897,8 +2904,13 @@ span.exturl:hover {
   color: #000;
   font-size: 1.05em;
 }
+.menu .menu-item .badge {
+  background: rgba(204,204,204,0.42);
+  padding: 1px 5px;
+}
 .site-description {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #152272;
   font-size: 0.875em;
 }
 .post-copyright ul {
