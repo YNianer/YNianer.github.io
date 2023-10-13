@@ -184,7 +184,7 @@ body {
   background: var(--body-bg-color);
   box-sizing: border-box;
   color: var(--text-color);
-  font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Times New Roman, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 1em;
   line-height: 2;
   min-height: 100%;
@@ -197,7 +197,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Times New Roman, Times New Roman, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-weight: bold;
   line-height: 1.5;
   margin: 30px 0 15px;
@@ -556,7 +556,7 @@ pre figcaption a:hover {
 }
 pre,
 code {
-  font-family: consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
+  font-family: Times New Roman, consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
 }
 code {
   border-radius: 3px;
@@ -1130,7 +1130,7 @@ pre code {
   color: var(--brand-hover-color);
 }
 .site-title {
-  font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Times New Roman, Times New Roman, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 1.375em;
   font-weight: normal;
   line-height: 1.5;
@@ -1801,7 +1801,7 @@ pre code {
   width: 4px;
 }
 .post-body {
-  font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Times New Roman, Times New Roman, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   overflow-wrap: break-word;
 }
 @media (min-width: 1200px) {
@@ -1987,7 +1987,7 @@ pre code {
 }
 .posts-expand .post-meta-container {
   color: #999;
-  font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Times New Roman, Times New Roman, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 0.75em;
   margin-top: 3px;
 }
@@ -2824,40 +2824,23 @@ span.exturl:hover {
   color: #ff106c;
 }
 .tag-cloud a {
-  box-shadow: 0 1px 3px #5587ce, 0 1px 2px #5587ce;
+  box-shadow: 0 1px 3px #24292e, 0 1px 2px #24292e;
   padding: 2px 10px;
   margin: 8px;
-  background: rgba(193,66,92,0);
+  color: #c21883;
+  background: #c6cbd1;
   border-bottom: none;
-  border-radius: 13px;
+  border-radius: 10px;
 }
 .posts-expand .post-tags a {
-  box-shadow: 0 1px 3px #5587ce, 0 1px 2px #5587ce;
+  box-shadow: 0 1px 3px #24292e, 0 1px 2px #24292e;
   padding: 2px 10px;
   margin: 8px;
-  background: rgba(193,66,92,0);
+  color: #c21883;
+  background: #c6cbd1;
   border-bottom: none;
-  border-radius: 13px;
+  border-radius: 10px;
 }
-/* 分类页样式 begin */
-.category-list-link:hover {
-  transform: scale(1.1);
-  box-shadow: 10px 10px 15px 2px rgba(0,0,0,0.12), 0 0 6px 0 rgba(104,104,105,0.1);
-  border-radius: 15px;
-  padding: 6px 16px;
-  margin-left: 0px;
-  font-size: 16px;
-  transition-duration: 0.15s;
-}
-a.category-list-link:before {
-  top: 10px;
-  width: 18px;
-  height: 18px;
-  content: "📚";
-  margin-right: 5px;
-  line-height: 18px;
-}
-/* 分类页样式 end */
 ::selection {
   background: #26a69a;
   color: #fff;
@@ -2889,7 +2872,7 @@ a.category-list-link:before {
 }
 .post-body {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 1.325em;
+  font-size: 1.2em;
   color: #000;
 }
 .posts-expand .post-title-link {
@@ -2899,16 +2882,16 @@ a.category-list-link:before {
 .posts-expand .post-title {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   color: #000;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 .menu .menu-item a {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   color: #000;
-  font-size: 1em;
+  font-size: 1.05em;
 }
 .site-description {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 0.9em;
+  font-size: 0.875em;
 }
 .post-copyright ul {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
@@ -2918,7 +2901,7 @@ a.category-list-link:before {
 .sidebar-inner {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   color: #000;
-  font-size: 1.15em;
+  font-size: 1.1em;
 }
 .search-popup .search-result-container {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
