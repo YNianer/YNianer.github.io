@@ -3002,6 +3002,7 @@ h6 {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   color: #000;
   font-size: 1.15em;
+  border-radius: 5px;
 }
 .sidebar-inner {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
@@ -3019,5 +3020,11 @@ h6 {
   font-family: Times new roman, cursive;
 }
 .gt-container {
+  font-family: Times new roman, cursive;
+}
+.gt-container .gt-comment-content {
+  border-radius: 5px;
+}
+.gt-container p {
   font-family: Times new roman, cursive;
 }
