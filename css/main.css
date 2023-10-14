@@ -1580,7 +1580,7 @@ pre code {
   width: 100%;
 }
 .with-love {
-  color: #f00;
+  color: #228d7e;
   display: inline-block;
   margin: 0 5px;
   animation: icon-animate 1.33s ease-in-out infinite;
@@ -2890,6 +2890,14 @@ span.exturl:hover {
   font-size: 1.2em;
   color: #000;
 }
+.post-body h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: unset;
+}
 .posts-expand .post-title-link {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   color: #000;
@@ -2898,6 +2906,20 @@ span.exturl:hover {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   color: #000;
   font-size: 1.5em;
+}
+.posts-expand .post-meta-container .post-description {
+  font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 0.9em;
+}
+.posts-expand .post-meta-container {
+  font-family: Times New Roman, cursive;
+  font-size: 0.85em;
+}
+.posts-expand .post-header {
+  margin-bottom: 40px;
+}
+.posts-collapse .post-content .collection-title {
+  font-family: times new roman, cursive;
 }
 .menu .menu-item a {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
@@ -2929,4 +2951,10 @@ span.exturl:hover {
 }
 .search-popup .search-input-container {
   font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+.footer-inner {
+  font-family: Times new roman, cursive;
+}
+.gt-container {
+  font-family: Times new roman, cursive;
 }
