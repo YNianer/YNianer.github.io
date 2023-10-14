@@ -6,3 +6,4 @@ document.addEventListener('page:loaded', () => {
       window.a2a.init();
     });
 });
+
