@@ -1,58 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Bootstrap Callout</title>
-    <url>/2023/10-14/bootstrap-callout/</url>
-    <content><![CDATA[<h3 id="1-bootstrap-callout-——note"><a href="#1-bootstrap-callout-——note" class="headerlink" title="1. bootstrap callout ——note"></a>1. bootstrap callout ——note</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">note:</span><br><span class="line">  # Note tag style values:</span><br><span class="line">  #  - simple    bootstrap callout old alert style. Default.</span><br><span class="line">  #  - modern    bootstrap callout new (v2-v3) alert style.</span><br><span class="line">  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.</span><br><span class="line">  #  - disabled  disable all CSS styles import of note tag.</span><br><span class="line">  style: flat</span><br><span class="line">  icons: true</span><br><span class="line">  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</span><br><span class="line">  # Offset also applied to label tag variables. This option can work with disabled note tag.</span><br><span class="line">  light<span class="emphasis">_bg_</span>offset: 0</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<details class="note default no-icon"><summary><p>This is a summary</p>
-</summary>
-<p>123</p>
-<p>456</p>
-
-</details>
-
-
-
-<blockquote class="blockquote-center">
-<p> 人类的本质是复读机。 </p>
-<p>——<strong>复读机</strong> </p>
-
-</blockquote>
-
-<h4 id="1-四级标题"><a href="#1-四级标题" class="headerlink" title="1. 四级标题"></a>1. 四级标题</h4><h4 id="2-四级标题"><a href="#2-四级标题" class="headerlink" title="2. 四级标题"></a>2. 四级标题</h4><h3 id="2-bootstrap-callout-——tabs"><a href="#2-bootstrap-callout-——tabs" class="headerlink" title="2. bootstrap callout ——tabs"></a>2. bootstrap callout ——tabs</h3><div class="tabs" id="test"><ul class="nav-tabs"><li class="tab active"><a href="#test-1">test 1</a></li><li class="tab"><a href="#test-2">test 2</a></li><li class="tab"><a href="#test-3">test 3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="test-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="test-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-pane" id="test-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
-
-
-
-<h3 id="3-789"><a href="#3-789" class="headerlink" title="3. 789"></a>3. 789</h3>]]></content>
+    <title>Equilibrium flash</title>
+    <url>/2023/10-15/flash-calculation/</url>
+    <content><![CDATA[<p>  多组分液体的平衡闪蒸可以可视化为使用单个平衡级的简单蒸馏过程。它与单组分液体的闪蒸有很大的不同，也更复杂。对于多组分液体，计算在给定温度和压力下彼此平衡的闪蒸和残余液体的数量需要反复试验和错误的迭代解决方案。这样的计算通常被称为平衡闪速计算。</p>
+<h3 id="质量守恒方程">1. 质量守恒方程</h3>
+<p>  考虑<span class="math inline">\(P、T\)</span>已知，总组成为<span
+class="math inline">\({z_i}\)</span>的<span
+class="math inline">\(F\)</span>摩尔的气液系统，若令<span
+class="math inline">\(V\)</span>表示组成为<span
+class="math inline">\({x_i}\)</span>的气相的摩尔数，<span
+class="math inline">\(L\)</span>表示组成为<span
+class="math inline">\({y_i}\)</span> 的液相的摩尔数，可得：</p>
+<ul>
+<li>总质量平衡方程：$ F = V + L $</li>
+<li>各组分质量平衡方程：<span class="math inline">\(z_i F = x_i V +
+y_iL,i=1,2,...,n.\)</span></li>
+</ul>
+<p>联立两式可得 <span class="math display">\[
+z_i = y_i\beta+x_i(1-\beta),i=1,2,...,n.
+\]</span> 其中，<span class="math inline">\(\beta =
+\frac{V}{F}\)</span>称为气化率。</p>
+<h3 id="气相组成和液相组成的关系式">2. 气相组成和液相组成的关系式</h3>
+<p>  平衡常数<span
+class="math inline">\(K_i\)</span>是许多参数的一般函数，尽管最重要的可能是温度；它们被定义为</p>
+<ul>
+<li><span class="math inline">\(y_i = K_i x_i\)</span></li>
+</ul>
+<p>其中，<span class="math inline">\(x_i\)</span> 为组分 <span
+class="math inline">\(i\)</span>在液相中的摩尔分数，<span
+class="math inline">\(y_i\)</span> 为组分 <span
+class="math inline">\(i\)</span>在气相中的摩尔分数；利用上步骤所得方程，计算得气相组成和液相组成的两个关系式：
+<span class="math display">\[
+x_i= \frac{z_i}{1+\beta\left(K_i-1\right)}, y_i =
+\frac{z_iK_i}{1+\beta\left(K_i-1\right)}, i=1,2,...,n.
+\]</span></p>
+<h3 id="rachford-rice方程">3. Rachford-Rice方程</h3>
+<p>  因为气相或液相摩尔分数加和均为1，把上式均遍及所有组元加和，可得：
+<span class="math display">\[
+\sum_{i=1}^n \frac{z_i}{1+\beta\left(K_i-1\right)} = 1,
+\sum_{i=1}^n\frac{z_iK_i}{1+\beta\left(K_i-1\right)}=1.
+\]</span> 将上述两式相减，得： <span class="math display">\[
+\sum_{i=1}^n \frac{z_i(K_i-1)}{1+\beta\left(K_i-1\right)} = 0.
+\]</span> <span class="math inline">\(z_i\)</span>为组分<span
+class="math inline">\(i\)</span>的摩尔分数(假定已知)，<span
+class="math inline">\(K_i\)</span>是组分<span
+class="math inline">\(i\)</span>的平衡常数，<span
+class="math inline">\(\beta\)</span>是气化率(未知数)。一旦Rachford-Rice方程求解出<span
+class="math inline">\(\beta\)</span>，就可以立即计算出组成<span
+class="math inline">\(x_i\)</span>和<span
+class="math inline">\(y_i\)</span>。</p>
+<p>  Rachford-Rice方程可以有多个<span
+class="math inline">\(\beta\)</span>的解，最多只有一个能保证<span
+class="math inline">\(x_i\)</span>和<span
+class="math inline">\(y_i\)</span>都为正。特别地，如果只有一个<span
+class="math inline">\(\beta\)</span>满足： <span class="math display">\[
+\frac{1}{1-K_{\max }}=\beta_{\min }&lt;\beta&lt;\beta_{\max
+}=\frac{1}{1-K_{\min }}
+\]</span> 那么<span
+class="math inline">\(\beta\)</span>就是解决方案；如果存在多个这样的<span
+class="math inline">\(\beta\)</span>，则表示或<span
+class="math inline">\(K_{max}&lt;1\)</span>或者<span
+class="math inline">\(K_{min}&gt;1\)</span>，分别表示不能维持气相(因此<span
+class="math inline">\(\beta=0\)</span>)或相反表示不能存在液相(因此<span
+class="math inline">\(\beta=1\)</span>)。</p>
+<h3 id="newton迭代">4. Newton迭代</h3>
+<p>  Newton法第k次迭代计算的通式： <span class="math display">\[
+f\left(\beta_k\right)+\left[\frac{d f(\beta)}{d
+\beta}\right]_{\beta=\beta_k}\left(\beta_{k+1}-\beta_k\right)=0
+\]</span> 可得到气化率<span class="math inline">\(\beta\)</span>的<span
+class="math inline">\(k\)</span>次迭代计算通式： <span
+class="math display">\[
+\beta_{k+1}=\beta_k+\frac{\sum_{i=1}^n
+\frac{z_i}{1+\beta_k\left(K_i-1\right)}}{\sum_{i=1}^n
+\frac{z_i\left(K_i-1\right)^2}{\left(1+\beta_k\left(K_i-1\right)\right)^2}}
+\]</span> 用Newton法求解上述方程是可行的，但存在收敛到错误<span
+class="math inline">\(\beta\)</span>值的风险，将求解器初始化为一个合理的初始值是很重要的，例如：<span
+class="math inline">\((\beta_{max}+\beta_{min})/2\)</span>(但Newton方法不能保证稳定性)。</p>
+]]></content>
       <categories>
-        <category>Next</category>
+        <category>CCUS</category>
       </categories>
       <tags>
-        <tag>Next</tag>
+        <tag>equilibrium flash</tag>
+        <tag>multi-component</tag>
       </tags>
   </entry>
   <entry>
     <title>Hello World</title>
     <url>/2023/10-12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a
+href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a
+href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <span id="more"></span>
-
-<h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h4 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
+<h3 id="quick-start">Quick Start</h3>
+<h4 id="create-a-new-post">Create a new post</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h4 id="run-server">Run server</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h4 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h4 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3>]]></content>
+<h4 id="generate-static-files">Generate static files</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h4 id="deploy-to-remote-sites">Deploy to remote sites</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="end">End</h3>
+]]></content>
       <categories>
         <category>Next</category>
         <category>Hexo</category>
@@ -60,6 +122,36 @@
       <tags>
         <tag>Next</tag>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Bootstrap Callout</title>
+    <url>/2023/10-14/bootstrap-callout/</url>
+    <content><![CDATA[<h3 id="bootstrap-callout-note">1. bootstrap callout ——note</h3>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">note:</span><br><span class="line">  # Note tag style values:</span><br><span class="line">  #  - simple    bootstrap callout old alert style. Default.</span><br><span class="line">  #  - modern    bootstrap callout new (v2-v3) alert style.</span><br><span class="line">  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.</span><br><span class="line">  #  - disabled  disable all CSS styles import of note tag.</span><br><span class="line">  style: flat</span><br><span class="line">  icons: true</span><br><span class="line">  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</span><br><span class="line">  # Offset also applied to label tag variables. This option can work with disabled note tag.</span><br><span class="line">  light<span class="emphasis">_bg_</span>offset: 0</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<details class="note default no-icon"><summary><p>This is a summary</p>
+</summary>
+<p>123</p>
+<p>456</p>
+
+</details>
+<blockquote class="blockquote-center">
+<p>人类的本质是复读机。</p>
+<p>——<strong>复读机</strong></p>
+
+</blockquote>
+<h4 id="四级标题">1. 四级标题</h4>
+<h4 id="四级标题-1">2. 四级标题</h4>
+<h3 id="bootstrap-callout-tabs">2. bootstrap callout ——tabs</h3>
+<div class="tabs" id="test"><ul class="nav-tabs"><li class="tab active"><a href="#test-1">test 1</a></li><li class="tab"><a href="#test-2">test 2</a></li><li class="tab"><a href="#test-3">test 3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="test-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="test-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-pane" id="test-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
+<h3 id="section">3. 789</h3>
+]]></content>
+      <categories>
+        <category>Next</category>
+      </categories>
+      <tags>
+        <tag>Next</tag>
       </tags>
   </entry>
 </search>
