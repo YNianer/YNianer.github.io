@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Bootstrap Callout</title>
+    <url>/2023/10-14/bootstrap-callout/</url>
+    <content><![CDATA[<h3 id="bootstrap-callout-note">1. bootstrap callout ——note</h3>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">note:</span><br><span class="line">  # Note tag style values:</span><br><span class="line">  #  - simple    bootstrap callout old alert style. Default.</span><br><span class="line">  #  - modern    bootstrap callout new (v2-v3) alert style.</span><br><span class="line">  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.</span><br><span class="line">  #  - disabled  disable all CSS styles import of note tag.</span><br><span class="line">  style: flat</span><br><span class="line">  icons: true</span><br><span class="line">  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</span><br><span class="line">  # Offset also applied to label tag variables. This option can work with disabled note tag.</span><br><span class="line">  light<span class="emphasis">_bg_</span>offset: 0</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<details class="note default no-icon"><summary><p>This is a summary</p>
+</summary>
+<p>123</p>
+<p>456</p>
+
+</details>
+<blockquote class="blockquote-center">
+<p>人类的本质是复读机。</p>
+<p>——<strong>复读机</strong></p>
+
+</blockquote>
+<h4 id="四级标题">1. 四级标题</h4>
+<h4 id="四级标题-1">2. 四级标题</h4>
+<h3 id="bootstrap-callout-tabs">2. bootstrap callout ——tabs</h3>
+<div class="tabs" id="test"><ul class="nav-tabs"><li class="tab active"><a href="#test-1">test 1</a></li><li class="tab"><a href="#test-2">test 2</a></li><li class="tab"><a href="#test-3">test 3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="test-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="test-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-pane" id="test-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
+<h3 id="section">3. 789</h3>
+]]></content>
+      <categories>
+        <category>Next</category>
+      </categories>
+      <tags>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>11th SPE CSP</title>
+    <url>/2023/12-29/11th-SPE-CSP/</url>
+    <content><![CDATA[<p>  2023年5月，SPE Reservoir Simulation研讨会发布第11个SPE Comparative
+Solution项目，该项目鼓励广大油藏数值模拟专家测试一个二氧化碳地质封存案例，模拟结果将在2025年的SPE
+Reservoir Simulation研讨会上进行展示。 <span id="more"></span></p>
+<p>  为二氧化碳地质封存提供经典案例和参考解，并进行以下探讨： 1.
+开发高效准确的离散方法，并验证其效果； 2.
+开发自适应时空网格剖分和区域分解方法，并验证其效果； 3.
+开发稳定高效的线性和非线性求解器； 4.
+评价地化反应、应力变化及边界条件等对咸水层埋存数值模拟的重要性。</p>
+<h2 id="spe11算例a">SPE11算例A</h2>
+<p><img src="/../images/11thspe.png" alt="ccus" style="border-radius: 0px;"></p>
+<h3 id="一模型">一、模型</h3>
+<p>（1）Two-phase、two-component质量守恒方程： <span
+class="math display">\[
+\frac{\partial}{\partial t}\left\{\phi \sum_\beta S_\beta \rho_\beta
+\chi_\beta^\kappa  \right\}+\nabla \cdot
+\boldsymbol{F}^\kappa-q^\kappa=0,
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\phi\)</span>为岩石的孔隙度</li>
+<li><span class="math inline">\(S_\beta\)</span>为<span
+class="math inline">\(\beta\)</span>相（气相或者液相）的饱和度</li>
+<li><span class="math inline">\(\rho_\beta\)</span>为<span
+class="math inline">\(\beta\)</span>相的密度</li>
+<li><span class="math inline">\(\chi_\beta^\kappa\)</span>为<span
+class="math inline">\(\beta\)</span>相中组分<span
+class="math inline">\(\kappa\)</span> 的质量分数</li>
+<li><span
+class="math inline">\(\boldsymbol{F}^\kappa\)</span>为流体组分<span
+class="math inline">\(\kappa\)</span> 的质量通量</li>
+<li><span class="math inline">\(q_\kappa\)</span>为组分<span
+class="math inline">\(\kappa\)</span> 的外部的源相或者汇相</li>
+</ul>
+<p>（2）流体通量<span
+class="math inline">\(\boldsymbol{F}^\kappa\)</span>为对流通量、扩散和色散通量之和:
+<span class="math display">\[
+\boldsymbol{F}^\kappa=-\sum_\beta\left(\rho_\beta \chi_\beta^\kappa
+\frac{\boldsymbol{k} k_{\mathrm{r}, \beta}}{\mu_\beta}\left(\nabla
+P_\beta-\rho_\beta \boldsymbol{g}\right)+ \rho_\beta
+\mathcal{D}_\beta^\kappa \nabla \chi_\beta^\kappa\right),
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{k}\)</span>为绝对渗透率</li>
+<li><span class="math inline">\(k_{\mathrm{r}, \beta}\)</span>为<span
+class="math inline">\(\beta\)</span>相的相对渗透率</li>
+<li><span class="math inline">\({\mu_\beta}\)</span>为<span
+class="math inline">\(\beta\)</span>相的粘度</li>
+<li><span class="math inline">\(P_\beta\)</span>为<span
+class="math inline">\(\beta\)</span>相的压力</li>
+<li><span class="math inline">\(\boldsymbol{g}\)</span>为重力加速度</li>
+<li><span class="math inline">\(\mathcal{D}_\beta^\kappa\)</span>
+扩散和色散张量</li>
+</ul>
+<p>（3）扩散和色散张量为： <span class="math display">\[
+\begin{gathered}
+\mathcal{D}_\beta^\kappa=D_{\beta, T}^\kappa \mathcal{I}+\frac{D_{\beta,
+L}^\kappa-D_{\beta, T}^\kappa}{\mathbf{v}_\beta^2} \mathbf{v}_\beta
+\mathbf{v}_\beta \\
+D_{\beta, L}^\kappa=\phi \tau_0 \tau_\beta d_\beta^\kappa+\alpha_{\beta,
+L}|\mathbf{v_\beta}|, ~~~~
+D_{\beta, T}^\kappa=\phi \tau_0 \tau_\beta d_\beta^\kappa+\alpha_{\beta,
+T}|\mathbf{v_\beta}|
+\end{gathered}
+\]</span></p>
+<p>一般情况下<span class="math inline">\(\alpha_{\beta, L} =
+\alpha_{\beta, T}\)</span>， <span class="math display">\[
+\mathcal{D}_\beta^\kappa=\phi \tau_0 \tau_\beta d_\beta^\kappa +
+\alpha_{\beta, T}|\mathbf{v_\beta}|
+\]</span></p>
+<ul>
+<li><span class="math inline">\(D_{\beta,L}^\kappa,
+D_{\beta,T}^\kappa\)</span>分别为纵向、横向的扩散和色散张量</li>
+<li><span class="math inline">\(\mathbf{v}_\beta\)</span>为 Darcy
+速度</li>
+<li><span class="math inline">\(\tau_0
+\tau_\beta\)</span>是包含多孔介质相关因子<span
+class="math inline">\(\tau_0\)</span>和系数<span
+class="math inline">\(\tau_\beta\)</span>的弯曲度</li>
+<li><span class="math inline">\(d_\beta^\kappa\)</span>为<span
+class="math inline">\(\beta\)</span>相中组分<span
+class="math inline">\(\kappa\)</span>的分子扩散系数</li>
+<li><span class="math inline">\(\alpha_{\beta, L},\alpha_{\beta,
+T}\)</span>分别为纵向、横向的扩散和色散系数</li>
+</ul>
+<p>（4）在质量守恒方程中， <span class="math display">\[
+\sum_\beta S=1, \quad \sum_\kappa \chi_\beta^\kappa=1 \forall \beta,\\
+P_c = P_g - P_l.
+\]</span></p>
+<ul>
+<li><span class="math inline">\(P_c\)</span>为毛细管压力</li>
+<li><span
+class="math inline">\(P_g、P_l\)</span>分别为气相和液相的压力</li>
+</ul>
+<h3 id="二毛血管压力与相对渗透率">二、毛血管压力与相对渗透率</h3>
+<h4 id="毛细管压力">1、毛细管压力</h4>
+<p>  基本Brooks-Corey毛细管压力由式给出: <span class="math display">\[
+\tilde{P}_{\mathrm{c}}=P_e S_{\text {eff }}^{-1 / \lambda}, ~~~~S_{\text
+{eff }}=\frac{S_l-S_{l, r}}{1-S_{l, r}}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(P_e\)</span>为毛细管入口压力阈值</li>
+<li><span class="math inline">\(\lambda\)</span>为Brooks-Corey指数</li>
+<li><span
+class="math inline">\(S_{l,r}\)</span>为液相的不可还原饱和度</li>
+</ul>
+<p>  毛细管压力只有在相连接时才有物理意义。对于小于<span
+class="math inline">\(S_{g,r}\)</span>的气相饱和度<span
+class="math inline">\(S_{g}\)</span>，相将以各种半径的分离气泡形式存在，因此可能不存在唯一的气相压力<span
+class="math inline">\(P_{g}\)</span>。这对流动计算没有影响(因为气相相对渗透率为零)，但会影响热力学计算。对于这种例子，需要通过定义适用于所有饱和度的扩展毛细管压力来解决这个问题:
+<span class="math display">\[
+P_{c}=P_{\text {cap }, \text { max }} \cdot
+\operatorname{erf}\left(\frac{\tilde{P}_c}{P_{\text {cap }, \text { max
+}}} \frac{\sqrt{\pi}}{2}\right)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(P_{\text {cap }, \text { max
+}}\)</span>为毛细管最大压力</li>
+<li><span
+class="math inline">\(\text{erf}(x)\)</span>误差函数，保证毛细管压力函数平稳过渡到最大值。由于误差函数被定义为正态分布的积分，它在无穷远处定义为：<span
+class="math inline">\(\text{erf}(\infty) = 1\)</span></li>
+</ul>
+<h4 id="相对渗透率">2、相对渗透率</h4>
+<p>  Brooks-Corey相对渗透率公式： <span class="math display">\[
+k_{\mathrm{r}, l}={\left(\frac{S_l-S_{l, r}}{1-S_{l,
+r}}\right)}^{c_l}\text {,}~~~~k_{\mathrm{r}, g}={\left(\frac{S_g-S_{g,
+r}}{1-S_{g, r}}\right)}^{c_g}\text {,}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(k_{\mathrm{r}, l},k_{\mathrm{r},
+g}\)</span>分别为液相和气相的相对渗透率</li>
+<li><span
+class="math inline">\(S_{l,r},S_{g,r}\)</span>为液相和气相的不可还原饱和度</li>
+</ul>
+<h3 id="三离散方式">三、离散方式</h3>
+<p>采用单元中心有限体积法（Cell-Centered Finite Volume, CCFV）</p>
+<h4 id="时间离散">1、时间离散</h4>
+<p><span class="math display">\[
+\frac{\left(\phi \sum_{\beta=l,g}\rho_\beta \cdot  S_\beta \cdot
+\chi_{\beta}\right)_{t+1} - \left(\phi \sum_{\beta=l,g}\rho_\beta
+\cdot  S_\beta\cdot \chi_{\beta}\right)_t}{\Delta t} + \text{F} - q = 0
+\]</span></p>
+<h4 id="空间离散">2、空间离散</h4>
+<ul>
+<li>左面的通量为：</li>
+</ul>
+<span class="math display">\[\begin{aligned}
+\text{F}_\text{Left}  = &amp;\sum_{\beta=l,g}\frac{\rho_\beta(i-1,j,k)
+\cdot \chi_{\beta}(i-1,j,k) \cdot k_{r,\beta}(i-1,j,k)
+}{\mu_\beta(i-1,j,k)} \cdot \text{max}(\text{U}_\text{L},0.0) \\
+&amp;+\frac{\rho_\beta(i,j,k) \cdot \chi_{\beta}(i,j,k) \cdot
+k_{r,\beta}(i,j,k)}{\mu_\beta(i,j,k)} \cdot
+\text{min}(\text{U}_\text{L},0.0)  \\
+&amp;+\text{U}_\rho \cdot \frac{\phi(i-1,j,k)+\phi(i,j,k)}{2} \cdot
+\tau_0\tau_\beta \cdot d_\beta \cdot \frac{\chi_\beta(i,j,k) -
+\chi_\beta(i-1,j,k)}{\Delta x}
+\end{aligned}\]</span>
+<p>其中， <span class="math display">\[\begin{equation}
+\left\{
+\begin{aligned}
+\displaystyle \text{U}_\text{L} &amp;=  -
+\frac{1}{\text{U}_k}  \left(\cdot \frac{P(i,j,k)  - P(i-1,j,k)}{\Delta
+x} - \text{U}_\rho \cdot \mathbf{g}\right),\\
+   \displaystyle \text{U}_k &amp;= \frac{1}{2}\cdot
+\left(\frac{1}{k(i-1,j,k)} + \frac{1}{k(i,j,k)}\right),\\
+   \displaystyle \text{U}_\rho &amp;=
+\frac{\rho_\beta(i-1,j,k)+\rho_\beta(i,j,k)}{2}.
+\end{aligned}
+   \right.
+\end{equation}\]</span></p>
+<ul>
+<li>右面的通量为：</li>
+</ul>
+<span class="math display">\[\begin{aligned}
+\text{F}_\text{Right} = &amp;\sum_{\beta=l,g}\frac{\rho_\beta(i,j,k)
+\cdot \chi_{\beta}(i,j,k) \cdot k_{r,\beta}(i,j,k) }{\mu_\beta(i,j,k)}
+\cdot \text{max}(\text{U}_\text{R},0.0)  \\
+&amp;+\frac{\rho_\beta(i+1,j,k) \cdot \chi_{\beta}(i+1,j,k) \cdot
+k_{r,\beta}(i+1,j,k)}{\mu_\beta(i+1,j,k)} \cdot
+\text{min}(\text{U}_\text{R},0.0)   \\
+&amp;+\text{U}_\rho \cdot \frac{\phi(i,j,k)+\phi(i+1,j,k)}{2} \cdot
+\tau_0\tau_\beta \cdot d_\beta \cdot \frac{\chi_\beta(i+1,j,k) -
+\chi_\beta(i,j,k)}{\Delta x}
+\end{aligned}\]</span>
+<p>其中， <span class="math display">\[\begin{equation}
+\left\{
+\begin{aligned}
+\text{U}_\text{R} &amp;=  - \frac{1}{\text{U}_k} \cdot
+\left(\frac{P(i+1,j,k)  - P(i,j,k)}{\Delta x} - \text{U}_\rho \cdot
+\mathbf{g}\right),\\
+\text{U}_k &amp;= \frac{1}{2}\cdot \left(\frac{1}{k(i,j,k)} +
+\frac{1}{k(i+1,j,k)}\right),\\
+\text{U}_\rho &amp;= \frac{\rho_\beta(i,j,k)+\rho_\beta(i+1,j,k)}{2}.
+\end{aligned}
+\right.
+\end{equation}\]</span></p>
+<ul>
+<li>同理可得：<span
+class="math inline">\(\text{F}_\text{Top},\text{F}_\text{Bottom},\text{F}_\text{Front},\text{F}_\text{Back}\)</span></li>
+</ul>
+<p><span class="math display">\[
+\text{F} = \frac{\text{F}_\text{Right} - \text{F}_\text{Left}}{\Delta x}
++ \frac{\text{F}_\text{Back} - \text{F}_\text{Front}}{\Delta y} +
+\frac{\text{F}_\text{Top} - \text{F}_\text{Bottom}}{\Delta z}
+\]</span></p>
+<h3 id="四初边界条件">四、初边界条件</h3>
+<h4 id="初始条件">1、初始条件</h4>
+<ul>
+<li>温度<span class="math inline">\(T = 20\)</span>°C、压强<span
+class="math inline">\(P = 1e6~\text{pa}\)</span></li>
+</ul>
+<h4 id="边界条件">2、边界条件</h4>
+<ul>
+<li><p>左右边界、下边界为黎曼边界</p></li>
+<li><p>上边界 <span class="math inline">\(P_{\text{top}} =
+1e6~\text{pa}, z_i = 0\)</span></p></li>
+</ul>
+<h4 id="注入方式">3、注入方式</h4>
+<ul>
+<li>注射速率为：<span class="math inline">\(1.7 \times 10^{-5}
+\text{kg}/{\text{m} \cdot \text{s}}\)</span></li>
+<li>Well #1：<span class="math inline">\((0.9,0.3)\)</span> 注射时间
+0h-5h</li>
+<li>Well #2：<span class="math inline">\((1.7,0.7)\)</span> 注射时间
+2.5h-5h</li>
+</ul>
+<h3 id="五相关参数">五、相关参数</h3>
+<p><img src="/../images/spe11A.png" alt="ccus" style="border-radius: 0px;"></p>
+<h2 id="spe11算例b">SPE11算例B</h2>
+<p>加入热力学方程 <span class="math display">\[
+\frac{\partial}{\partial t}\left(\left(1-\phi \right)\rho_R C_R T+ \phi
+\sum_\beta S_{\beta} \rho_{\beta} C_{\beta} T \right) +\nabla \cdot
+\mathbf{F}^{T} -  q^{T} = 0
+\]</span> 热通量<span
+class="math inline">\(\mathbf{F}^{T}\)</span>为热对流通量和热传导通量之和</p>
+]]></content>
+      <categories>
+        <category>SPE</category>
+      </categories>
+      <tags>
+        <tag>SPE11</tag>
+        <tag>Reservoir Simulation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Equilibrium flash</title>
+    <url>/2023/10-15/flash-calculation/</url>
+    <content><![CDATA[<p>  多组分液体的平衡闪蒸可以可视化为使用单个平衡级的简单蒸馏过程。它与单组分液体的闪蒸有很大的不同，也更复杂。对于多组分液体，计算在给定温度和压力下彼此平衡的闪蒸和残余液体的数量需要反复试验和错误的迭代解决方案。这样的计算通常被称为平衡闪速计算。</p>
+<h3 id="质量守恒方程">1. 质量守恒方程</h3>
+<p>  考虑<span class="math inline">\(P、T\)</span>已知，总组成为<span
+class="math inline">\({z_i}\)</span>的<span
+class="math inline">\(F\)</span>摩尔的气液系统，若令<span
+class="math inline">\(V\)</span>表示组成为<span
+class="math inline">\({x_i}\)</span>的气相的摩尔数，<span
+class="math inline">\(L\)</span>表示组成为<span
+class="math inline">\({y_i}\)</span> 的液相的摩尔数，可得：</p>
+<ul>
+<li>总质量平衡方程：$ F = V + L $</li>
+<li>各组分质量平衡方程：<span class="math inline">\(z_i F = x_i V +
+y_iL,i=1,2,...,n.\)</span></li>
+</ul>
+<p>联立两式可得 <span class="math display">\[
+z_i = y_i\beta+x_i(1-\beta),i=1,2,...,n.
+\]</span> 其中，<span class="math inline">\(\beta =
+\frac{V}{F}\)</span>称为气化率。</p>
+<h3 id="气相组成和液相组成的关系式">2. 气相组成和液相组成的关系式</h3>
+<p>  平衡常数<span
+class="math inline">\(K_i\)</span>是许多参数的一般函数，尽管最重要的可能是温度；它们被定义为</p>
+<ul>
+<li><span class="math inline">\(y_i = K_i x_i\)</span></li>
+</ul>
+<p>其中，<span class="math inline">\(x_i\)</span> 为组分 <span
+class="math inline">\(i\)</span>在液相中的摩尔分数，<span
+class="math inline">\(y_i\)</span> 为组分 <span
+class="math inline">\(i\)</span>在气相中的摩尔分数；利用上步骤所得方程，计算得气相组成和液相组成的两个关系式：
+<span class="math display">\[
+x_i= \frac{z_i}{1+\beta\left(K_i-1\right)}, y_i =
+\frac{z_iK_i}{1+\beta\left(K_i-1\right)}, i=1,2,...,n.
+\]</span></p>
+<h3 id="rachford-rice方程">3. Rachford-Rice方程</h3>
+<p>  因为气相或液相摩尔分数加和均为1，把上式均遍及所有组元加和，可得：
+<span class="math display">\[
+\sum_{i=1}^n \frac{z_i}{1+\beta\left(K_i-1\right)} = 1,
+\sum_{i=1}^n\frac{z_iK_i}{1+\beta\left(K_i-1\right)}=1.
+\]</span> 将上述两式相减，得： <span class="math display">\[
+\sum_{i=1}^n \frac{z_i(K_i-1)}{1+\beta\left(K_i-1\right)} = 0.
+\]</span> <span class="math inline">\(z_i\)</span>为组分<span
+class="math inline">\(i\)</span>的摩尔分数(假定已知)，<span
+class="math inline">\(K_i\)</span>是组分<span
+class="math inline">\(i\)</span>的平衡常数，<span
+class="math inline">\(\beta\)</span>是气化率(未知数)。一旦Rachford-Rice方程求解出<span
+class="math inline">\(\beta\)</span>，就可以立即计算出组成<span
+class="math inline">\(x_i\)</span>和<span
+class="math inline">\(y_i\)</span>。</p>
+<p>  Rachford-Rice方程可以有多个<span
+class="math inline">\(\beta\)</span>的解，最多只有一个能保证<span
+class="math inline">\(x_i\)</span>和<span
+class="math inline">\(y_i\)</span>都为正。特别地，如果只有一个<span
+class="math inline">\(\beta\)</span>满足： <span class="math display">\[
+\frac{1}{1-K_{\max }}=\beta_{\min }&lt;\beta&lt;\beta_{\max
+}=\frac{1}{1-K_{\min }}
+\]</span> 那么<span
+class="math inline">\(\beta\)</span>就是解决方案；如果存在多个这样的<span
+class="math inline">\(\beta\)</span>，则表示或<span
+class="math inline">\(K_{max}&lt;1\)</span>或者<span
+class="math inline">\(K_{min}&gt;1\)</span>，分别表示不能维持气相(因此<span
+class="math inline">\(\beta=0\)</span>)或相反表示不能存在液相(因此<span
+class="math inline">\(\beta=1\)</span>)。</p>
+<h3 id="newton迭代">4. Newton迭代</h3>
+<p>  Newton法第k次迭代计算的通式： <span class="math display">\[
+f\left(\beta_k\right)+\left[\frac{d f(\beta)}{d
+\beta}\right]_{\beta=\beta_k}\left(\beta_{k+1}-\beta_k\right)=0
+\]</span> 可得到气化率<span class="math inline">\(\beta\)</span>的<span
+class="math inline">\(k\)</span>次迭代计算通式： <span
+class="math display">\[
+\beta_{k+1}=\beta_k+\frac{\sum_{i=1}^n
+\frac{z_i}{1+\beta_k\left(K_i-1\right)}}{\sum_{i=1}^n
+\frac{z_i\left(K_i-1\right)^2}{\left(1+\beta_k\left(K_i-1\right)\right)^2}}
+\]</span> 用Newton法求解上述方程是可行的，但存在收敛到错误<span
+class="math inline">\(\beta\)</span>值的风险，将求解器初始化为一个合理的初始值是很重要的，例如：<span
+class="math inline">\((\beta_{max}+\beta_{min})/2\)</span>(但Newton方法不能保证稳定性)。</p>
+]]></content>
+      <categories>
+        <category>CCUS</category>
+      </categories>
+      <tags>
+        <tag>equilibrium flash</tag>
+        <tag>multi-component</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/10-12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a
+href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a
+href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h3 id="quick-start">Quick Start</h3>
+<h4 id="create-a-new-post">Create a new post</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h4 id="run-server">Run server</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h4 id="generate-static-files">Generate static files</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h4 id="deploy-to-remote-sites">Deploy to remote sites</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="end">End</h3>
+]]></content>
+      <categories>
+        <category>Next</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Next</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+</search>
