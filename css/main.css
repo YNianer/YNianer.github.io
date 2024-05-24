@@ -3035,3 +3035,7 @@ h6 {
 .gt-container p {
   font-family: Times New Roman, Kaiti, cursive, sans-serif;
 }
+.gt-container .gt-popup {
+  border-radius: 10px 10px 10px 10px;
+  opacity: 0.9;
+}
