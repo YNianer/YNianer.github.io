@@ -2948,8 +2948,15 @@ span.exturl:hover {
 .links-of-author-item {
   width: 33%;
 }
+@font-face {
+  font-family: 'Kaiti';
+  src: url("/images/STKaitiSC-Regular.ttf") format('truetype');
+}
+body {
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
+}
 .post-body {
-  font-family: Times New Roman, cursive, Trebuchet MS, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
   font-size: 1.2em;
   color: #000;
 }
@@ -2962,30 +2969,30 @@ h6 {
   font-family: unset;
 }
 .posts-expand .post-title-link {
-  font-family: Times New Roman, cursive, Trebuchet MS, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
   color: #000;
 }
 .posts-expand .post-title {
-  font-family: Times New Roman, cursive, Trebuchet MS, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
   color: #000;
   font-size: 1.5em;
 }
 .posts-expand .post-meta-container .post-description {
-  font-family: Times New Roman, cursive, Trebuchet MS, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
   font-size: 0.9em;
 }
 .posts-expand .post-meta-container {
-  font-family: Times New Roman, cursive;
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
   font-size: 0.85em;
 }
 .posts-expand .post-header {
   margin-bottom: 40px;
 }
 .posts-collapse .post-content .collection-title {
-  font-family: Times New Roman, cursive;
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
 }
 .menu .menu-item a {
-  font-family: Times New Roman, cursive, Trebuchet MS, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+/*font-family: Times New Roman, Kaiti, cursive, sans-serif;*/
   color: #000;
   font-size: 1.05em;
 }
@@ -2994,37 +3001,37 @@ h6 {
   padding: 1px 5px;
 }
 .site-description {
-  font-family: Times New Roman, cursive, Trebuchet MS, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
   color: #152272;
   font-size: 0.875em;
 }
 .post-copyright ul {
-  font-family: Times New Roman, cursive, Trebuchet MS, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
   color: #000;
   font-size: 1.15em;
   border-radius: 5px;
 }
 .sidebar-inner {
-  font-family: Times New Roman, cursive, Trebuchet MS, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
   color: #000;
   font-size: 1.1em;
 }
 .search-popup .search-result-container {
-  font-family: Times New Roman, cursive, Trebuchet MS, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
   font-size: 1.2em;
 }
 .search-popup .search-input-container {
-  font-family: Times New Roman, cursive, Trebuchet MS, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
 }
 .footer-inner {
-  font-family: Times New Roman, cursive;
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
 }
 .gt-container {
-  font-family: Times New Roman, cursive;
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
 }
 .gt-container .gt-comment-content {
   border-radius: 5px;
 }
 .gt-container p {
-  font-family: Times New Roman, cursive;
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
 }
