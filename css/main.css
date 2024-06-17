@@ -2991,6 +2991,9 @@ h6 {
 .posts-collapse .post-content .collection-title {
   font-family: Times New Roman, Kaiti, cursive, sans-serif;
 }
+.posts-collapse .post-content .collection-header small {
+  font-family: Times New Roman, Kaiti, cursive, sans-serif;
+}
 .menu .menu-item a {
 /*font-family: Times New Roman, Kaiti, cursive, sans-serif;*/
   color: #000;
